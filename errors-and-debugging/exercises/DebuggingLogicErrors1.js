@@ -3,6 +3,8 @@
 // Did it?
 // Do not worry about fixing the code yet, we will do that in the next series of exercises.
 
+//It did launch, but should not have. The fuel level is too low. However, due to the order of the if/else statements, launchReady is incorrectly set to "true" and starts incorrectly. 
+
 let launchReady = false;
 let fuelLevel = 17000;
 let crewStatus = true;
