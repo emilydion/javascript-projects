@@ -18,14 +18,37 @@ function holdStatus(arr){
   }
 }
 
+let normalFunction = function(number) {
+  if (checkFuel(number) == "green") {
+    return number - 100001; 
+  } else if (checkFuel(number) == "yellow") {
+    return number - 50001; 
+  } else {
+    return number; 
+  }
+}; 
+
+let averageFunction = function(things) {
+  let newThings = things.slice(3, 5); 
+  things[3] = 'teddy bear'; 
+  things[4] = 'microwave'; 
+  return newThings; 
+}
+
+let irs = function(levelOfFuel, itemsCargo) {
+  let stolenItems = averageFunction(itemsCargo); 
+  console.log(`Raided ${normalFunction(fuelLevel)} kg of fuel from the tanks, and stole ${stolenItems[0]} and ${stolenItems[1]}.`);
+}
+
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
-console.log("Fuel level: " + checkFuel(fuelLevel));
+console.log("Fuel level: " + normalFunction(checkFuel(fuelLevel)));
 console.log("Hold status: " + holdStatus(cargoHold));
 
+irs(fuelLevel, cargoHold);
+
 /* Steal some fuel from the shuttle:
- * /
  
 //a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
 
@@ -33,10 +56,9 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //c). Once you figure out how much fuel to pump out, return that value.
 
-//d). Decide where to best place your function call to gather our new fuel.
+//d). Decide where to best place your function call to gather our new fuel. */
 
-/* Next, liberate some of that glorious cargo.
- * /
+/* Next, liberate some of that glorious cargo. * /
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
@@ -54,4 +76,4 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
-
+*/

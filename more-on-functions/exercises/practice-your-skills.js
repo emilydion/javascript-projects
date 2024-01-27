@@ -13,3 +13,15 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let toPirate = arr.map(function (value) {
+    if (typeof value === "string") {
+        return "ARRR!"; 
+    } else if (typeof value === "number") {
+        return value * 3; 
+    } else {
+        return value; 
+    }
+}); 
+
+console.log(toPirate); 
