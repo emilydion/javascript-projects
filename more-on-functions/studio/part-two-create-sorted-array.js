@@ -20,10 +20,32 @@ function findMinValue(arr){
 
 //Your function here...
 
+/* function sortArray(arr) {
+  let finalArray = []; 
+  let minimum = findMinValue(arr); 
+  while (arr.length > 0) {
+    finalArray.push(minimum); 
+    arr.splice(arr.indexOf(minimum), 1); 
+    minimum = findMinValue(arr); 
+  }
+  return finalArray; 
+} */
+
 /* BONUS MISSION: Refactor your sorting function to use recursion below:
  */
+let finalArray = []; 
+function sortArray(arr) {
+  if (arr.length === 0) {
+    return finalArray; 
+  } 
+  finalArray.push(findMinValue(arr)); 
+  arr.splice(arr.indexOf(findMinValue(arr)), 1);
+  return sortArray(arr);
+}
 
 //Sample arrays for testing:
 let nums1 = [5, 10, 2, 42];
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+console.log(sortArray(nums1)); 
